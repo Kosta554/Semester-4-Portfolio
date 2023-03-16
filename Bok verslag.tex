@@ -1,0 +1,600 @@
+\documentclass[12pt, letterpaper]{article}
+\usepackage{times}
+\usepackage{graphicx}
+\usepackage{import}
+\usepackage{fancyhdr}
+\usepackage{wrapfig}
+\usepackage[utf8]{inputenc}
+\usepackage[hidelinks]{hyperref}
+\usepackage{subcaption}
+\usepackage{pdfpages}
+\pagestyle{fancyplain}% <- use fancyplain instead fancy
+\fancyhf{}
+\addtolength{\headheight}{15pt}
+\fancyhead[L]{Cyber Security - Konstantinos Poumpouridis}% <- added
+\fancyhead[R]{488394}
+\fancyfoot[C]{\thepage}
+%\renewcommand\headrulewidth{0pt}% default ist .4pt
+\renewcommand{\plainheadrulewidth}{.4pt}% default is 0pt
+\title{Semester 4: Body of Knowledge}
+\author{Konstantinos Poumpouridis}
+\date{08/02/2023}
+\pagenumbering{arabic}
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+    
+\newpage
+\section{Changelog}
+    \begin{table}[htbp]
+        \begin{tabular}{|l|l|l|}
+            \hline
+            Version & Changes         & Date   \tabularnewline \hline
+            0.1     & Added BOK week (1-4) & 08/02/23 \tabularnewline \hline
+        0.2  &  Added week 1 + Attachment 1 & 14/02/23 \tabularnewline \hline
+       0.2.1     &    Added notes for week 2, Attachment notes reworked     &  16/02/23      \tabularnewline \hline
+       0.2.2  &  Finished week 2 + reworked attachment in Attachment 1 & 18/02/23 \tabularnewline \hline
+       0.2.3  &  Finished 1st advanced task  & 26/02/23 \tabularnewline \hline
+       0.3  &  Finished week 3  & 03/03/23 \tabularnewline \hline
+        \end{tabular}
+    \end{table}
+\newpage
+\tableofcontents
+\newpage
+\section{Introduction}
+\begin{wrapfigure}{1}{0.25\textwidth}
+    \includegraphics[width=0.25\textwidth]{fotos/Kosta.jpeg}
+    \caption{Picture of me}
+\end{wrapfigure}
+My name is Konstantinos Poumpouridis or in short Kosta. I was born in 11 June 1999 in Thessaloniki.
+
+\subsection{My background}
+
+What I do in my spare time is working on open-source projects and tinker with computers. My recent projects are making everything accessible with my iPad Pro like working with Windows 365 or with vCenter or code through Github code space. I also do fitness and sim racing.
+\hfill\break
+\\
+I also have a LinkedIn page where you can see how many certificates I've achieved.
+\hfill\break
+\url{https://www.linkedin.com/in/konstantinos-poumpouridis-552080171/}
+\\
+\newpage
+\subsection{My hobby's}
+
+\subsubsection{Sim-racing}
+%Yes, an expensive hobby to have but my love for motorsport is huge.  It started with Rally since that rally is big in Greece (due to all the rocky roads hahaha) eventually I went to go on Gran Turismo 4 and fell in love. My family gifted me a steering wheel and that's when I knew that I love cars and racing. Now I follow WRC, Le Mans, Formula 1 and IMSA.
+Having a love for motorsport is indeed a costly hobby, but my passion for it is immense. It all began with Rally, which is quite popular in Greece due to the abundance of rocky roads. From there, I discovered Gran Turismo 4 and became enamored with it. The gift of a steering wheel from my family solidified my love for cars and racing, and now I avidly follow events such as WRC, Le Mans, Formula 1, and IMSA.
+\begin{center}
+    \includegraphics[width=0.8\textwidth]{fotos/simracingkosta.jpeg}
+\end{center}
+I began playing in 2021 and earned a few trophies along the way. While I don't play as frequently as I would like, this is partly due to my broken steering wheel and the costly monthly subscription fee of \$13.
+
+
+\newpage
+\section{Web Application Security (week 1-4)}
+\subsection{Week 1}
+%In the beginning, we were slowly discovering some tools to use. We started first installing Kali Linux in vCenter and a Ubuntu server for Juice shop and DWVA for other testing software. There also was a workshop on Friday (10 Oct) which I attended. There were 2 workshops, One was about introduction to Infrastructure which I skipped and the second one was about hacking-related coding basic but I followed this one. 
+At the start, we gradually learned about various tools and their uses. Our initial steps included installing Kali Linux in vCenter, Ubuntu server for Juice Shop, and DWVA for other testing purposes. On Friday, October 10th, there was a workshop which I attended. Out of the two workshops scheduled, I chose to attend the second one, which focused on basic coding in relation to hacking, while I skipped the first one, which was an introduction to Infrastructure.
+\break
+\\
+%The workshop that I attended was from Tom Broumels and he was explaining how simple it is to inject code if no line checks if the request is not something malicious. I made some quick notes while he was presenting. you can see it in "Attachment 1: Workshop hacking related coding basic notes" or you can press this hyperlink down here.
+I recently attended a workshop led by Tom Broumels, where he demonstrated how easy it is to inject code when proper checks are not in place to prevent malicious requests. During the workshop, I took some notes, which can be viewed in "Attachment 1: Workshop hacking related coding basic notes". Alternatively, you can access the notes by clicking on the hyperlink below.
+\hyperref[workshop:week1]{\textbf{Press here to see my notes from the workshop!}}
+
+\newpage
+\subsubsection{Set-up of a test Web Shop}
+
+\begin{figure}[!ht]
+    \centering
+    \begin{subfigure}{.5\textwidth}
+        \centering
+        \includegraphics[width=.8\linewidth]{fotos/Bok week 1/Week_1_install_vmware.jpeg}
+        \caption{My VM's on my vCenter}
+%        \label{fig:sub1}
+    \end{subfigure}%
+    \begin{subfigure}{.5\textwidth}
+        \centering
+        \includegraphics[width=.8\linewidth]{fotos/Bok week 1/Pfsense_install.jpeg}
+        \caption{PFSense configured}
+%        \label{fig:sub2}
+    \end{subfigure}
+    \begin{subfigure}{.5\textwidth}
+    \centering
+    \includegraphics[width=.8\linewidth]{fotos/Bok week 1/Juice shop installed.jpeg}
+    \caption{Juice shop pulled and ready to be installed}
+    \label{fig:sub3}
+\end{subfigure}%
+%\begin{subfigure}{.5\textwidth}
+%    \centering
+%    \includegraphics[width=.8\linewidth]{fotos/Kosta.jpeg}
+%    \caption{Place holder}
+%    \label{fig:sub4}
+%\end{subfigure}
+\end{figure}\mbox{}\\
+\hfill
+\\
+On the second day of our school, we went on to install some virtual machines into our vCenter. We had to install Kali Linux (of course) since that will be our main operating system to use hack tools this semester. second but optional is to install PFSense so that other students don't go to our systems and destroy anything in it. and the last one was to install Juice Shop and or DVWA which are two testing environment for pen testing.
+\newpage
+\subsubsection{Threat + Risk Analysis for the test Web Shop}
+
+Risk Analysis: (optional if other CIA and Risk Matrix assignments are done)
+
+\includegraphics[width=1.1\textwidth]{fotos/Bok week 1/Riskanalysis.jpeg}
+\break
+Business Continuity: 
+\hfill\break
+\includegraphics[width=1.1\textwidth]{fotos/Bok week 1/Riskanalysis2.jpeg}
+\break
+*rest damage is an estimate of the damage that can be done after the measurement is implemented, your risk will never be 0.0 and no assurance can be given at any time.
+\break
+\newpage
+\begin{enumerate}
+    \item \textbf{Burglar:} The security measures I choose against Burglars are Security cameras, Security Personal and Key card authentication. The security cameras and security personnel speak for themselves with these 2 measurements you reduce criminals who want to break in and Key cards make it a lot harder for your criminals.
+    \item \textbf{Virus:} Viruses come in different forms and shapes and worse keep evolving just like a real virus does to our immune system. Good thing that Antivirus exist which helps us detect viruses and contain them. But the best virus scanner is your brain and what I mean by it is when you see a shady link or a file that you don't click it straight away and think about it if it's safe or not. That's why people need virus awareness training so they don't get viruses in their systems.
+    \item \textbf{Trojan/Phishing:} Trojans and phishing are meant to infiltrate your systems and steal and or ransom your data. Most of the Phishing and Trojans come from emails disguised as the government or some company. So my solution for this has some monitoring tools for your mail and some intelligent filter to keep out spam and unwanted mail coming to your mail servers. Plus you can also train your employees in some Phishing and Trojan awareness training.
+    \item \textbf{Short circuit:} A short circuit happens randomly and the best solution is to have a fire extinguisher and to keep your hardware maintained at all times to reduce the chances of a short circuit. Of course, there is enterprise hardware which ensures longer durability and also has longer warranty to make sure that you get what you got promised.
+    \item \textbf{Fire:} Fire is unpredictable so it is better to be prepared if it is happing. Fire can come from many reasons from overheating to short circuits, so these 3 things are mandatory in my opinion. The first one is Fire extinguishers because first of all, it is mandatory to have one in the office and second it is a solid solution and is not dangerous compared to carbon dioxide extinguisher which is dangerous because if someone gets stuck in the server room they can suffocate in the room due to lack of oxygen
+    \item \textbf{Power outage:} Power outages not only go your servers go offline but your whole office building goes out of electricity as well. That's why I recommend installing UPS and a generator. Let's start with UPS or an Uninterruptible Power Supply it's meant once the electricity goes down that you have enough time to safely shut down your servers. A generator is mostly used after the disaster so that you have some electricity but the problem with generators is that they take time to startup which is a problem when you need to prevent your servers from sudden outages.
+\end{enumerate}
+
+\subsubsection{Coding for hackers part 1: Web Programming}
+Go to Attachment 1 for more information.
+\\
+\hyperref[workshop:week1]{\textbf{My notes about this workshop is in Attachment 1}}
+\newpage
+\subsubsection{Basic Hacking and Pentesting Proces}
+\emph{You should be able to explain in your BoK:}
+\begin{itemize}
+    \item \emph{What are the process steps of every pentest in general?}
+    \item \emph{What are the minimal requirements for a good pentest contract and pentest report?}
+\end{itemize}
+
+\textbf{What are the process steps of every pentest in general?}
+\hfill\break
+The first step for pen testing is of course to gather some information or "Intel Gathering" because before you want to know some company information like phone numbers, names and emails. Once the hacker has all the information that it needs. The second step is to plan out your idea before you attack. What I mean by it is to get an idea of what ports may be open or which range they would use this is called footprinting.
+\hfill\break
+\\
+\emph{"Footprinting (also known as reconnaissance) is the technique used for gathering information about computer systems and the entities they belong to. To get this information, a hacker might use various tools and technologies. This information is very useful to a hacker who is trying to crack a whole system." - Wikipedia contributors. (2023, 18 januari). Footprinting. Wikipedia. Geraadpleegd op 14 februari 2023, van https://en.wikipedia.org/wiki/Footprinting}
+\hfill\break
+Now the third step checking for any vulnerabilities this is when you go in-depth into your pen testing. You'll be using these tools to find any exploits:
+\begin{itemize}
+    \item Tooling: web application proxies \& web browser
+    \item XSS and CSRF
+    \item SQL Injection
+    \item Path Traversal
+    \item Network Sniffing and Spoofing
+\end{itemize}
+\hfill\break
+\newpage
+
+Lets start with \textbf{Tooling: web application proxies \& web browser}
+\hfill\break
+\\
+In most browsers, there is a program called "Dev Tools" which you can inspect the page in code. There are also external applications for web proxies like Burp Suite or OWASP ZAP.
+\hfill\break
+\hfill\break
+
+\textbf{XSS and CSRF}
+\hfill\break
+\hfill\break
+
+\textbf{SQL Injection}
+\hfill\break
+\hfill\break
+
+
+\textbf{Path Traversal}
+\hfill\break
+
+
+
+\textbf{Network Sniffing and Spoofing}
+\hfill\break
+
+
+This information has been sourced by: Basic Hacking and Pentesting Proces. (z.d.). FHICT. Geraadpleegd op 14 februari 2023, 
+\hfill\break
+van https://fhict.instructure.com/courses/12919/pages/reference-basic-hacking-and-pentesting-proces
+\newpage
+\subsubsection{DVWA: Command Injection}
+After deploying my DVWA into my VCenter environment I started to log in to my DVWA website and changed the security to low for testing and learning. I started with low security to find out how to inject commands.
+\hfill\break
+
+\begin{figure}[!ht]
+    \centering
+    \begin{subfigure}{.5\textwidth}
+        \centering
+        \includegraphics[width=1\textwidth]{fotos/Bok week 1/DVWA/DVWA-login.png}
+        \caption{DVWA login}
+        \label{fig:sub6}
+    \end{subfigure}%
+    \begin{subfigure}{.5\textwidth}
+        \centering
+        \includegraphics[width=1\textwidth]{fotos/Bok week 1/DVWA/DVWA-settings-low.png}
+        \caption{DVWA sececurity system}
+        \label{fig:sub7}
+    \end{subfigure}
+\end{figure}\mbox{}\\
+\hfill \break
+Starting with code injection. Since that the server from DVWA does not checking. 
+\newpage
+
+\begin{figure}[!ht]
+    \begin{subfigure}{.5\textwidth}
+        \centering
+        \includegraphics[width=1\textwidth]{fotos/Bok week 1/DVWA/Command-injection-tested-loitering-low.jpeg}
+        \caption{Testing the code with uname -a}
+        \label{fig:sub1}
+    \end{subfigure}%
+    \begin{subfigure}{.5\textwidth}
+        \centering
+        \includegraphics[width=1\textwidth]{fotos/Bok week 1/DVWA/Command-inject-passed-low.png}
+        \caption{Testing the code with "IP; cat /etc/passwd"}
+        \label{fig:sub2}
+    \end{subfigure}
+\end{figure}\mbox{}\\
+\hfill\break
+The low security does not check that my request I'm sending through the IP search bar which means I can send bash commands alongside the IP request.
+\newpage
+\subsection{Week 2}
+\textbf{Wensday}
+Today we had a workshop about First phase of hacking 
+\hfill\break
+\\
+\hyperref[workshop:week2]{\textbf{Press here to see my notes from the workshop!}}
+\hfill\break
+\\
+The teacher has showed the link to group project and pen test pre engagement. Still waiting for Floris to green lit or red lit it. Konstantin has a proposition but the problem. I made a proposition to make a pen testing in Vanderlande that they have an environment. We asked some questions about if we have to typing all of it and he responded that “if you have the time than do it but consider how much time you have”. So I’ve send my first draft to my teacher which wasn’t finished but now it is little more clear how we write our documents.
+\hfill\break
+\\
+Note to the company:
+We are ethical student we don’t want to destruct the environment.
+\hfill\break
+\\
+\textbf{Our group agreement}
+\hfill\break
+\\
+On the 15th of February, we assigned each other roles and then started to make the rules. We wanted to make sure that everyone agreed upon this rule.
+\hfill\break 
+\\
+\textbf{Project leader:}
+\hfill\break
+The First role that we assigned was me, the group and my coach unanimously decided that I should be the project leader due to my load mouth.
+
+\textbf{Note taker:}
+\hfill\break
+The second role was assigned also by me and Konstantin since no one wanted to take notes so I took it upon myself and Konstantin.
+
+\textbf{Product owner:}
+\hfill\break
+Dean van Deijck is selected as a product owner. He has experience from his previous groups in how to manage and deliver the end product. So I and the group has faith in him that he will guide us to Proficient.
+
+\textbf{Development team:}
+\hfill\break
+Konstantin, Petar and Floris are our development team which fills every part that we miss in our project.
+
+\hfill\break
+\hfill\break
+\textbf{Workshop: lockpicking}
+This Friday we had suppose to have Kuberneties workshop but that is changed to lock-picking. We had demo from Marco and he told us different tools for different lock 
+
+\hyperref[workshop:week2Lockpicking]{\emph{Here is my notes for the lockpicking workshop}}
+\newpage
+\subsubsection{Footprinting, Reconnaissance and Social Engineering}
+\textbf{The task}
+\hfill\break
+\includegraphics[width=1\textwidth]{PDFs/Week 2/Opdracht footprinting.jpeg}
+\hfill\break
+\textbf{Explain why this is an important phase of the pentesting proces.}
+\hfill\break
+In short, footprinting is a phase where you start gathering information about your target. Once you gathered enough information by finding addresses like mail, IP addresses, open ports, names and phone numbers Then your settle to pen test your target.
+
+\hfill\break
+\hfill\break
+\textbf{ Make sure that you can show and explain at least 3 different techniques for searching useful information}
+\hfill\break
+\hfill\break
+There are 3 different techniques that I used in this exercise
+\begin{enumerate}
+    \item The Harvester
+    \item Maltego
+    \item Lix - LinkedIn Scraping \& Email Finder
+\end{enumerate}
+\hfill\break
+\hfill\break
+The harvester:
+\hfill\break
+\hfill\break
+\newpage
+The Harvester or TheHarvester is a tool you can use to gather information from a domain. Once you entered your domain and which search engine you want to use. The tool will gather names, emails, IPs, subdomains and URLs.
+\hfill\break
+\hfill\break
+I've tried it on my kali machine and these are my results.
+\begin{figure}[!ht]
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=0.9\linewidth]{PDFs/Week 2/The harvester marktplaats tweakers.png}
+        \caption{The harvester gathering info of Marktplaats and Tweakers}
+    \end{subfigure}
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=0.9\linewidth]{PDFs/Week 2/Theharvest-fhict.png}
+        \caption{The harvester gathering info of FHICT}
+    \end{subfigure}
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=0.9\linewidth]{PDFs/Week 2/Theharvest-fontys.png}
+        \caption{The harvester gathering info of Fontys}
+    \end{subfigure}
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=0.9\linewidth]{PDFs/Week 2/Theharvester-vanderlande.png}
+        \caption{The harvester gathering info of Vanderlande}
+    \end{subfigure}
+    \caption{My test on TheHarvester}
+\end{figure}
+I came across some colleagues on Vanderlande's website, which was unexpected. I was able to find Tim, who works in second-line support, and it was interesting to see.
+
+\newpage
+Maltego:
+\hfill\break
+\hfill\break
+Acording to wiki:
+
+\emph{Maltego is software used for open-source intelligence and forensics, developed by Paterva from Pretoria, South Africa. Maltego focuses on providing a library of transforms for discovery of data from open sources, and visualizing that information in a graph format, suitable for link analysis and data mining. As of 2019, the team of Maltego Technologies headquartered in Munich, Germany has taken responsibility for all global customer-facing operations.} - Wikipedia contributors. (2022, November 24). Maltego. Wikipedia. Retrieved February 19, 2023, from https://en.wikipedia.org/wiki/Maltego
+\hfill\break
+\hfill\break
+In short Maltego is a data visualizer and analyzer tool which you can use to gather information about users, companies and networks in domains. It is used for information gathering to find vulnerabilities.
+\hfill\break
+\hfill\break
+\textbf{Find how frontpage of nu.nl looked like 10 jears ago using waybackmachine.org}
+\hfill\break
+\hfill\break
+\includegraphics[width=0.7\textwidth]{PDFs/Week 2/Wayback nu.png}
+\hfill\break
+\hfill\break
+It wasn't hard to use it, All you need to do is paste the link https://ww.nu.nl/ and pick a date that you like. I must say that nu.nl changed a lot over the years just like YouTube, facebook and Hyves!
+\hfill\break
+\hfill\break
+\textbf{Discover what URLs are hidden from search in robots.txt files of Pentagon and Whitehouse.}
+\hfill\break
+\hfill\break
+If you go for example whitehouse.gov/robots.txt you have to sites you can visit: https://www.whitehouse.gov/sitemap\_index.xml and there is a spanish version
+\begin{figure}[!ht]
+    \begin{subfigure}{.5\textwidth}
+        \centering
+        \includegraphics[width=0.8\textwidth]{PDFs/Week 2/Whitehouse-gov-robotstxt.png}
+        \caption{Whitehouse(dot)gov robot txt}
+    \end{subfigure}
+    \begin{subfigure}{.5\textwidth}
+        \centering
+        \includegraphics[width=0.8\textwidth]{fotos/Week 2/Pentagonrobot.jpeg}
+        \caption{Pentagon(dot)gov robot.txt}
+    \end{subfigure}
+\caption{One has index full of links and the other has their own sets of rules what they allow in their website.}
+\end{figure}\mbox{}\\
+\hfill\break
+\hfill\break
+\textbf{Use tooling}
+\hfill\break
+\hfill\break
+\begin{itemize}
+    \item Traceroute to determine path ti fontys.nl, fhict.nl
+    \item Determine which DNS and email server are used by fontys and fhict
+    \item Determine which ip addressess are used by fhict by whois utility and non whois tool
+    \item run theharvester utility at least 3 domains of choice
+\end{itemize}
+\newpage
+\begin{figure}[!ht]
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=0.9\linewidth]{PDFs/Week 2/Trace route fhict.png}
+        \caption{Traceroute on FHICT}
+    \end{subfigure}
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=0.9\linewidth]{PDFs/Week 2/Whois fhict.png}
+        \caption{Used whois on FHICT}
+    \end{subfigure}
+    \caption{Determined traceroute and whois on FHICT}
+\end{figure}
+\newpage
+\subsection{Week 3}
+This week we had a carnival vacation so we had a week off. I wanted to work on school so that I'm safely proficient. But sadly my family decided to get a dog which I was against and you can guess who had to watch the dog during the whole vacation so I had to look after him the whole day so I only worked for school at night which was exhausting but I managed to finish 1 advanced task just to be safe.
+\subsubsection{Advanced Footprinting, Reconnaissance and Social Engineering}
+\includegraphics[width=0.8\textwidth]{fotos/Week 3/Advanced footprinting.jpeg}
+\hfill\break
+\hfill\break
+Me and Dean were looking where to find this Google Hacking database and we were searching and found this website form exploit-db.
+\hfill\break
+\hfill\break
+\includegraphics[width=0.8\textwidth]{fotos/Week 3/Google hacking database tags.png}
+\break
+\emph{\hyperlink{https://www.exploit-db.com/google-hacking-database}{Link to the website}}
+We've discovered a site where they show all the tags you can use on google.
+\hfill\break
+\hfill\break
+\includegraphics[width=0.8\textwidth]{fotos/Week 3/Site “geheim”.jpeg}
+\break
+\emph{Using 'site:aivd.* intitle:"geheim"'}
+\hfill\break
+\hfill\break
+\includegraphics[width=0.8\textwidth]{fotos/Week 3/Site “geheim resultaat.png}
+\break
+\emph{This site contains the word "geheim" in this page}
+\hfill\break
+\hfill\break
+\includegraphics[width=0.8\textwidth]{fotos/Week 3/Inurl whitehouse.png}
+\break
+\emph{This is the "inurl" search for looking for a Whitehouse gov login page}
+\hfill\break
+\hfill\break
+\includegraphics[width=0.8\textwidth]{fotos/Week 3/Whitehouse login page.jpeg}
+\break
+\emph{We have concluded that this is the official \hyperlink{secure.login.gov}{login page of the Whitehouse}}
+\hfill\break
+\hfill\break
+\includegraphics[width=0.9\textwidth]{fotos/Week 3/Maltego - philips.jpg}
+\break
+\emph{This is a graph that i found while using Maltego Community Edition}
+\newpage
+\subsubsection{Path Traversal, (Remote) File Inclusion and Command Injection}
+\includegraphics[width=0.9\textwidth]{fotos/Week 3/Path Traversal, (Remote) File Inclusion and Command Injection/Basic level dvwa command injection.jpeg}
+\hfill\break
+\emph{Explain what path traversal is and demonstrate how it works.}
+\hfill\break
+\hfill\break
+\emph{Explain what remote file inclusion is and demonstrate how it works.}
+\hfill\break
+\hfill\break
+\emph{Explain what command injection is and demonstrate how it works}
+\hfill\break
+\hfill\break
+\emph{How are path traversal, Remote file inclusion and command injection related?}
+\newpage
+\subsubsection{Web Application Firewalls}
+We are starting to follow the guide that the school have provided me. So after deploying DVWA again I head off and updated my DVWA to the latest software with "sudo apt update" and "sudo apt full-upgrade"
+\hfill\break
+\includegraphics[width=0.9\textwidth]{fotos/Week 3/WAF/Update.png}
+\emph{Trying to update and upgrade}
+\hfill\break
+\hfill\break
+\includegraphics[width=0.9\textwidth]{fotos/Week 3/WAF/Openssh install.png}
+\break
+\includegraphics[width=0.9\textwidth]{fotos/Week 3/WAF/Modsecurity config.png}
+
+Moet hier nog aan werken........
+\newpage
+\subsection{Week 4}
+\subsubsection{Host Intrusion Detection and Prevention HIDS}
+\includegraphics[width=0.9\textwidth]{fotos/Week 4/Host Intrusion Detection and Prevention HIDS.jpeg}
+\begin{itemize}
+    \item Explain the difference between NIDS and HIDS and IDS and IPS, and the meaning and relevance for your company.
+    \item Install and run open-source HIDS software "OSSEC server" on a dedicated server, and deploy OSSEC agent on another server, for example on DVWA. Show that it triggers on (simulated) malicious activity. 
+
+\end{itemize}
+\textbf{Network Intrusion Detection System or NIDS} is a system that is trying to detect suspicious activity. Its main task is to find malicious activities with the help of monitoring but all monitoring can impact the performance of your environment.
+\hfill\break
+\textbf{Host Intrusion Detection System or HIDS} main goal is checking on hosts and not through the network as NIDS. It checks on logs, files and applications. This can impact other hosts. But if you have the spare resources then it is recommended to have HIDS and NIDS for extra security.
+\hfill\break
+\textbf{Intrusion Detection System or IDS}
+\hfill\break
+\textbf{Intrusion Prevention System or IPS}
+\hfill\break
+\hfill\break
+source hyperlinks:
+\begin{enumerate}
+    \item \href{https://www.computerhope.com/jargon/n/nids.htm}{What is NIDS from www.computerhope.com}
+    \item \href{https://heimdalsecurity.com/blog/host-intrusion-detection-system-hids/}{Host Intrusion Detection System (HIDS) from www.heimdalsecurity.co}
+    \item \href{https://www.okta.com/identity-101/ids-vs-ips/}{IDS vs IPS from okta }
+\end{enumerate}
+\textbf{Wazuh installation}
+I've started to deploy from a template and went to Wazuh's website to download the assisted script but it did not fully work for some reason. It kept failing me. So do not waste more time I've decided to use the docker version. What docker does it have already installed Wazuh in a container that is ready to be used. 
+\hfill\break
+\includegraphics[width=0.9\textwidth]{fotos/Week 4/Trying to install wazuh native.png}
+\break
+\emph{Trying to install Wazuh in a native way.}
+
+\hfill\break
+\hfill\break
+\textbf{Installing through docker}
+\hfill\break
+After installing Docker Core and Docker Compose I only needed to import the latest container and run it with docker-compose which help to create the container with the right setup.
+\hfill\break
+\includegraphics[width=0.9\textwidth]{fotos/Week 4/Wazuh docker install.png}
+\break
+\emph{Installing through docker}
+
+After deploying I installed a Domain Controller for a future project. 
+\newpage
+\section{Attachment 1: My Notes}
+\subsection{Workshop hacking related coding basic notes}
+\label{workshop:week1}
+%On the 10th of October, we received a Workshop from Tom Broumels about how software developers sometimes neglect the security part of the application. He gave us some examples like the libraries are not updated which means there are chances that the packages are out of date and not safe anymore which raises concern. The first demo was about if you don't check on the server side if you type something on the search bar that it isn't a bash command or a request outside what it was intended. 
+Tom Broumels conducted a workshop for us on October 10th, highlighting the issue of software developers neglecting the security aspect of their applications. He provided real-life examples, such as outdated libraries, which pose a security risk due to their vulnerability to attack. During the workshop, the first demonstration was centered around the dangers of not properly checking user inputs, such as searching through a bar, to prevent harmful bash commands or unauthorized requests.Tom Broumels conducted a workshop for us on October 10th, highlighting the issue of software developers neglecting the security aspect of their applications. He provided real-life examples, such as outdated libraries, which pose a security risk due to their vulnerability to attack. During the workshop, the first demonstration was centered around the dangers of not properly checking user inputs, such as searching through a bar, to prevent harmful bash commands or unauthorized requests.
+\hfill\break
+\\
+He ended his presentation with as a software developer "Don't trust user input", "Use build-in sanitation functions" and "Think about security once in a while".
+\includepdf[pages=-]{PDFs/Week 1/Workshop Notes sec workshop week 1 p1.pdf}
+\includepdf[pages=-]{PDFs/Week 1/Workshop Notes sec workshop week 1 p2.pdf}
+
+\newpage
+\subsection{Workshop First phase of hacking notes}
+\label{workshop:week2}
+\newpage
+\includepdf[pages=-]{PDFs/Week 1/Workshop week 2 first phase of hacking page 1_3.pdf}
+\includepdf[pages=-]{PDFs/Week 1/Workshop week 2 first phase of hacking page 2_3.pdf}
+\includepdf[pages=-]{PDFs/Week 1/Workshop week 2 first phase of hacking page 3_3.pdf}
+\newpage
+\subsection{Workshop Path traversal notes}
+\label{workshop:path_traversal}
+In this workshop, we were discussing Path travelling and how it can help if you want to command inject en with help of path travelling you can travel and find the passwd file. David demonstrated in DVWA that you can exploit this in PHP and what happens if you don't protect your pages from commands. He was able to use python and set a port for his kali to use.
+\includepdf[pages=-]{PDFs/Workshop Notes 16 feb.pdf}
+\subsection{Workshop Lockpicking}
+\label{workshop:week2Lockpicking}
+Marco has us some locks to play around with. I started with level 2. It wasn't that hard. It was just fiddling around with a snake lock. In lock 5 however, it was a lot more difficult to unlock it. I was sitting for ours trying to figure out how to unlock it.
+\hfill\break
+
+\begin{figure}[!ht]
+    \centering
+    \begin{subfigure}{.5\textwidth}
+        \centering
+        \includegraphics[width=.8\linewidth]{PDFs/Week 2/Lock pick lvl2.jpeg}
+        \caption{Trying to unlock lvl 2 lock}
+    \end{subfigure}%
+    \begin{subfigure}{.5\textwidth}
+        \centering
+        \includegraphics[width=.8\linewidth]{PDFs/Week 2/Lock picking lvl5.jpeg}
+        \caption{Trying to unlock lvl 5 lock}
+    \end{subfigure}
+    \begin{subfigure}{.5\textwidth}
+    \centering
+    \includegraphics[width=.8\linewidth]{PDFs/Week 2/Lockpicking with dean.jpeg}
+    \caption{Together with Dean van Deijck trying to unlock the bicycle lock}
+\end{subfigure}%
+\end{figure}\mbox{}\\
+\newpage
+\subsection{Workshop WAF}
+Wensday on 1 march we got a workshop about .... 
+\includepdf[pages=-]{PDFs/Week 3/Workshop Notes 1 maart WAP.pdf}
+\subsection{Workshop SQL injection}
+\includepdf[pages=-]{PDFs/Week 3/Workshop Notes 2 maart sql injection.pdf}
+\newpage
+\subsection{Workshop Portfolio \& BOK}
+
+\includepdf[pages=-]{PDFs/Week 4/Porftolio bok 1v2.pdf}
+\includepdf[pages=-]{PDFs/Week 4/portfolio bok 2v2.pdf}
+\newpage
+\subsection{Workshop Blind SQL with Python}
+\includepdf[pages=-]{PDFs/Week 4/Workshop 3 mrt blind sql with python.pdf}
+\newpage
+\subsection{Workshop Cyber Security \& Awareness}
+\includepdf[pages=-]{PDFs/Week 4/Workshop Notes 8 mrt cybersecurity & awareness.pdf}
+\includepdf[pages=-]{PDFs/Week 4/Workshop Notes 8 mrt cybersecurity awareneness 2.pdf}
+\newpage
+\subsection{Workshop Why we need HIDS?}
+\includepdf[pages=-]{PDFs/Week 4/Workshop Notes 8 mrt why we need HIDS.pdf}
+\newpage
+\subsection{Workshop PVI}
+\includepdf[pages=-]{PDFs/Week 4/Workshop Notes 9mrt PVI.pdf}
+\includepdf[pages=-]{PDFs/Week 4/Workshop Notes 9mrt pvi 2.pdf}
+\newpage
+\subsection{Workshop Fontys CTF}
+\includegraphics[width=.8\linewidth]{fotos/Week 4/Ctf/IMG_0397.png}
+\includegraphics[width=.8\linewidth]{fotos/Week 4/Ctf/IMG_0398.png}
+\includegraphics[width=.8\linewidth]{fotos/Week 4/Ctf/IMG_0399.png}
+\includepdf[pages=-]{PDFs/Week 4/Workshop Notes 10 mrt Fontys to ctf.pdf}
+\newpage
+\subsection{Workshop Hacking Process, Scanning and Enumeration}
+\includepdf[pages=-]{PDFs/Week 5/Workshop Notes 15mrt hacking proces_ scanning enumeration.pdf}
+\newpage
+\subsection{Law, Ethics and Response}
+\includepdf[pages=-]{PDFs/Week 5/Workshop Notes 16 mrt law ethics and response.pdf}
+\includepdf[pages=-]{PDFs/Week 5/Workshop Notes 16 mrt gdpr page 2.pdf}
+\newpage
+\subsection{Secure connection with crypto}
+\includepdf[pages=-]{PDFs/Week 5/Workshop Notes 16 mrt secure connection with crypto.pdf}
+\newpage
+\section{Attachment 2: SOAR project Semester 3}
+\label{soarpdf}
+\includepdf[pages=-]{PDFs/Week 4/portfoliosoar.pdf}
+\end{document}
