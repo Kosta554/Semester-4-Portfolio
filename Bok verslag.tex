@@ -36,6 +36,7 @@
        0.2.2  &  Finished week 2 + reworked attachment in Attachment 1 & 18/02/23 \tabularnewline \hline
        0.2.3  &  Finished 1st advanced task  & 26/02/23 \tabularnewline \hline
        0.3  &  Finished week 3  & 03/03/23 \tabularnewline \hline
+        0.3.1  &  Finished week 5  & 21/03/23 \tabularnewline \hline
         \end{tabular}
     \end{table}
 \newpage
@@ -452,6 +453,7 @@ We've discovered a site where they show all the tags you can use on google.
 \emph{How are path traversal, Remote file inclusion and command injection related?}
 \newpage
 \subsubsection{Web Application Firewalls}
+\hfill\break
 We are starting to follow the guide that the school have provided me. So after deploying DVWA again I head off and updated my DVWA to the latest software with "sudo apt update" and "sudo apt full-upgrade"
 \hfill\break
 \includegraphics[width=0.9\textwidth]{fotos/Week 3/WAF/Update.png}
@@ -505,6 +507,89 @@ After installing Docker Core and Docker Compose I only needed to import the late
 \emph{Installing through docker}
 
 After deploying I installed a Domain Controller for a future project. 
+\newpage
+\section{Network Security (week 5-8)}
+I already had some ideas for PVI:
+\begin{itemize}
+    \item Hackintosh
+    \item Fritzbox NAS SMB v1
+\end{itemize}
+\subsection{Week 5}
+\hfill\break
+\subsubsection{Law \& Ethics\, Responsible Disclosure and GDPR}
+\includegraphics[width=0.9\textwidth]{fotos/Week 5/Assignment laws and ethics.jpeg}
+\hfill\break
+These are the cases that I've found that punishes the cyber criminals for their deeds.
+\begin{itemize}
+    \item Fake Payment reminder to ANWB. \href{https://www.nu.nl/tech/6235066/man-stuurt-phishingmails-uit-naam-van-anwb-drie-jaar-cel.html}{(source link)}
+    \item Man gets three years in prison for large-scale data trade. \href{https://www.nu.nl/tech/6205158/man-krijgt-drie-jaar-cel-voor-grootschalige-datahandel.html}{(source link)}
+    \item US authorities arrest alleged BreachForums owner and FBI hacker Pompompurin. \href{https://www.engadget.com/us-authorities-arrest-alleged-breachforums-owner-and-fbi-hacker-pompompurin-170009266.html?guccounter=1&guce_referrer=aHR0cHM6Ly9kdWNrZHVja2dvLmNvbS8&guce_referrer_sig=AQAAAEQpBy2kyPUw8ATdF7w0YnJKYmFnjlXQBih0kfhNxBKIz72UCOUpxu9292uBgp_UYr943Ch6jme-7qPjiaPoIvwA0tF3gzqrTQ53lsHHJLU7iIAFF4HlycLB-xIWOjEry79rP-CuyE__yIWz8JT8XhYLqHe6qQjX4liyn7WTZRug}{(source link)}
+\end{itemize}
+\newpage
+\textbf{Fake Payment reminder to ANWB}
+\hfill\break
+A 24 year old man from Amsterdam tried to send multiple Phishing emails to ANWB between January and April. He has been sentenced to three years in jail and has to pay a fine of €75.000. His method was by sending an email to workers as a "Pay reminder" and he succeeded with it having earned €85.000 in his pocket. (Information based on: https://www.nu.nl/tech/6235066/man-stuurt-phishingmails-uit-naam-van-anwb-drie-jaar-cel.html)
+\hfill\break
+\hfill\break
+In my opinion, I think that the punishment must be heavier because a study shows that Cyber Crime has been on the rise since 2020. According to the statistics in 2020 The Netherlands has risen in cyber victims by 50\% (link to the source https://aag-it.com/the-latest-cyber-crime-statistics). According to Rijksoverheid a Cyber Criminal can only have a maximum sentence of 2 - 5 years which is low nowadays because of the damage that they can cause to the world. If they increase the punishment then fewer people will try and do Cyber Crimes, in the theory of course.
+\hfill\break
+\hfill\break
+\textbf{Man gets three years in prison for large-scale data trade}
+\hfill\break
+A 35 year old man from Heerenveen has been sentenced to three years in jail for selling personal data that could be misused for fraud.
+The person had been receiving data from 6.700 computers where he also collected 12.500 telephone numbers. He sold all the personal files to the web and made more than €70.000. This happened in 2019. Eventually, he got caught and was sentenced to 2 years in jail. (Information based on: https://www.nu.nl/tech/6205158/man-krijgt-drie-jaar-cel-voor-grootschalige-datahandel.html)
+\hfill\break
+\hfill\break
+In my opinion. I don't have anything to say then "Yeah I wanted a harsher punishment but this will do"
+\hfill\break
+\hfill\break
+\textbf{\textbf{US authorities arrest alleged BreachForums owner and FBI hacker Pompompurin.}}
+\hfill\break
+After watching a YouTuber called SomeOrdinaryGamer and watched a video called "The FBI Just Arrested The Owner Of The Largest Hacker Forum..." And he was talking about a person who is known as Conor Brian Fitzpatrick or "Pompompurin" and he was the administrator of BreachForum which was taken down. There is some connection to the recent leaks of Robinhood hack in 2021 and the Twitter data leak in 2022. Also in 2021, he embarrassed the FBI agency email server by sending thousands of fake warnings. I guess that the FBI had enough of him and got arrested. He will appear a federal court on March 24th. (Information based on: \href{https://www.engadget.com/us-authorities-arrest-alleged-breachforums-owner-and-fbi-hacker-pompompurin-170009266.html?guccounter=1&guce_referrer=aHR0cHM6Ly9kdWNrZHVja2dvLmNvbS8&guce_referrer_sig=AQAAAEQpBy2kyPUw8ATdF7w0YnJKYmFnjlXQBih0kfhNxBKIz72UCOUpxu9292uBgp_UYr943Ch6jme-7qPjiaPoIvwA0tF3gzqrTQ53lsHHJLU7iIAFF4HlycLB-xIWOjEry79rP-CuyE__yIWz8JT8XhYLqHe6qQjX4liyn7WTZRug}{(Engadget.com link} and https://youtu.be/mr3yalaUlwc)
+\hfill\break
+\hfill\break
+\textbf{\emph {Describe what you will do if you find a high risk vulnerability, unexpected, in a website or IT-infrastructure (after reading the CVD policy Links to an external site.) Take into consideration if you want to make money or make the world a safer place.}}
+\hfill\break
+\hfill\break
+After reading the 28 pages of the PDF document. I've made my conclusion that I stopped reading after 15 pages. But in all seriousness, I would probably want to make a better world. Because I don't want to live in a world where the world is plagued with constant cyber attacks and slowly destroying the world even though I like money a lot, I won't abuse exploits to gain some extra money.
+\hfill\break
+\hfill\break
+\textbf{\emph {Find two or three companies and explain the concept of responsible disclosure they have in place and compare those companies}}
+\hfill\break
+I've found couple of companies who handle in Responsible Disclosures
+\begin{enumerate}
+    \item \href{https://www.shell.com/about-us/our-values/shell-global-helpline/responsible-disclosure-policy.html}{Shell: responsible disclosure policy (link to the website)}
+    \item \href{https://www.avans.nl/international/about-avans/responsible-disclosure}{Avans University of Applied Science: Responsible disclosure policy (link to the website)}
+    \item \href{https://www.mars.com/about/policies-and-practices/responsible-disclosure-policy}{Mars: Responsible Disclosure (link to the website)}
+\end{enumerate}
+After comparing one to another.
+\newpage
+\subsubsection{Network Scanning and Enumeration}
+\includegraphics[width=0.9\textwidth]{fotos/Week 5/Network Scanning and Enumeration.jpeg}
+\hfill\break
+sample text
+\hfill\break
+\includegraphics[width=0.9\textwidth]{fotos/Week 5/Semester 4 Week 5 netwerk tekening.jpg}
+\break
+\emph{This is my current network environment in my vCenter.}
+\hfill\break
+\hfill\break
+Here is a picture of me trying to check for ports on my DC01.
+\hfill\break
+\hfill\break
+\includegraphics[width=0.9\textwidth]{fotos/Week 5/NMap pinging test.jpeg}
+\break
+\emph{Me trying to ping my DC01 with nmap}
+\hfill\break
+\hfill\break
+\includegraphics[width=0.9\textwidth]{fotos/Week 5/NMa- pinging ports.jpeg}
+\break
+\emph{Trying to find open ports}
+\hfill\break
+\hfill\break
+\includegraphics[width=0.9\textwidth]{fotos/Week 5/Guessing windows nmap.jpeg}
+\break
+\emph{Here it tries to guess Operating System as well.}
 \newpage
 \section{Attachment 1: My Notes}
 \subsection{Workshop hacking related coding basic notes}
