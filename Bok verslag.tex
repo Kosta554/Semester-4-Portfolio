@@ -37,6 +37,7 @@
        0.2.3  &  Finished 1st advanced task  & 26/02/23 \tabularnewline \hline
        0.3  &  Finished week 3  & 03/03/23 \tabularnewline \hline
         0.3.1  &  Finished week 5  & 21/03/23 \tabularnewline \hline
+        0.3.2  &  Finished roughly finished week 4  & 28/03/23 \tabularnewline \hline
         \end{tabular}
     \end{table}
 \newpage
@@ -508,6 +509,117 @@ After installing Docker Core and Docker Compose I only needed to import the late
 
 After deploying I installed a Domain Controller for a future project. 
 \newpage
+\subsubsection{XSS (Cross-Site Scripting)}
+\includegraphics[width=0.9\textwidth]{fotos/Week 4/XSS basic.jpeg}
+\hfill\break
+\hfill\break
+\textbf{XSS Reflected LOW}
+\hfill\break
+\hfill\break
+After playing around with DVWA, this is the results that I got.
+\hfill\break
+\hfill\break
+\includegraphics[width=0.9\textwidth]{fotos/Week 4/Xss/Reflected/Old/Low input text.jpeg}
+\break
+\emph{Trying to send a script on low security}
+\hfill\break
+\hfill\break
+\includegraphics[width=0.9\textwidth]{fotos/Week 4/Xss/Reflected/Old/Low output text.jpeg}
+\break
+\emph{This is what I get when I search it with running a script to put out in error message}
+\hfill\break
+\hfill\break
+\includegraphics[width=0.9\textwidth]{fotos/Week 4/Xss/Reflected/Console log output.png}
+\break
+\emph{This exploit script runs through console log with the help of alert(1)}
+\hfill\break
+\hfill\break
+\textbf{XSS Stored Low}
+\hfill\break
+\hfill\break
+\includegraphics[width=0.9\textwidth]{fotos/Week 4/Xss/Stored/Stored input.jpeg}
+\break
+\emph{Same goes to here since the low security does not check anything at all}
+\hfill\break
+\hfill\break
+\includegraphics[width=0.9\textwidth]{fotos/Week 4/Xss/Stored/Stored output.jpeg}
+\break
+\emph{Same output as reflected because there are no checkings or anything}
+\hfill\break
+\hfill\break
+\textbf{XSS Stored Medium}
+\hfill\break
+\hfill\break
+\includegraphics[width=0.9\textwidth]{fotos/Week 4/Xss/Reflected/Medium/Source code.jpeg}
+\break
+\emph{As you can see in the code it is trying to prevent to inject any script into this page.}
+\hfill\break
+\hfill\break
+\includegraphics[width=0.9\textwidth]{fotos/Week 4/Xss/Stored/Medium/Max lenght.jpeg}
+\break
+\emph{As you can see I cannot change the code since there is an some sort limiter plus I cannot add any text into the body since it is getting actively checked if there is a possible command}
+\hfill\break
+\hfill\break
+\includegraphics{fotos/Week 4/Xss/Stored/Medium/Change lenth.jpeg}
+\break
+\emph{We are going to change the max length to fit our code but we are not done yet.}
+\hfill\break
+\hfill\break
+\includegraphics{fotos/Week 4/Xss/Stored/Medium/Change the word script.png}
+\break
+\emph{This is cheesy but the php file checks only for "script" so if we add some capital into 1 word then it gets passed by the security.}
+
+
+\hfill\break
+\hfill\break
+\textbf{How does this work?}
+\hfill\break
+Since the PHP does not check what I input which means I can run unchecked code on it. By running <script>(something)</script> you can output a message by inputting something or showing you a cookie which is scary.
+\hfill\break
+\newpage
+\subsubsection{CSRF (Cross Site Request Forgery)}
+\includegraphics[width=0.9\textwidth]{fotos/Week 4/CSRF basic.jpeg}
+\textbf{What is CSRF and how does it work?}
+\hfill\break
+\hfill\break
+CSRF or Cross-Site Request Forgery is meant to trick users into performing an action on a web page.
+\hfill\break
+\hfill\break
+\textbf{The different way of cross-site request forgery attacks?}
+\hfill\break
+There are many ways that CSRF can attack. They can use GET when they try and intercept a money transfer. Of course, this is impossible without a little help of social engineering. Other method is to use a POST request the difference between GET and POST attacks is just how it is been executed.
+\hfill\break
+\hfill\break
+This information was sourced by Cross-Site Request Forgery (CSRF) | OWASP Foundation. (n.d.-b). OWASP. Retrieved March 28, 2023, from https://owasp.org/www-community/attacks/csrf
+\hfill\break
+\hfill\break
+\textbf{DEMO}
+\hfill\break
+\hfill\break
+\includegraphics[width=0.9\textwidth]{fotos/Week 4/CSRF/CSRF source code low.jpeg}
+\break
+\emph{This is the code of an Low security in DVWA}
+\hfill\break
+\hfill\break
+\includegraphics[width=0.9\textwidth]{fotos/Week 4/CSRF/Original get requesst.jpeg}
+\break
+\emph{With the help of BURP we can intercept the request and change it to our liking}
+\hfill\break
+\hfill\break
+\includegraphics[width=0.5\textwidth]{fotos/Week 4/CSRF/CSRF password query .jpeg}
+\break
+\emph{On the right side of BURP program we can see the queries and we can change it to something different}
+\hfill\break
+\hfill\break
+\includegraphics[width=0.9\textwidth]{fotos/Week 4/CSRF/Push new password.jpeg}
+\break
+\emph{We've changed it to test123 and now we going to push the request to the server so they can procces it.}
+\hfill\break
+\hfill\break
+\includegraphics[width=0.9\textwidth]{fotos/Week 4/CSRF/Password changed.jpeg}
+\break
+\emph{Now you can see that the password has been changed}
+\newpage
 \section{Network Security (week 5-8)}
 I already had some ideas for PVI:
 \begin{itemize}
@@ -515,7 +627,6 @@ I already had some ideas for PVI:
     \item Fritzbox NAS SMB v1
 \end{itemize}
 \subsection{Week 5}
-\hfill\break
 \subsubsection{Law \& Ethics\, Responsible Disclosure and GDPR}
 \includegraphics[width=0.9\textwidth]{fotos/Week 5/Assignment laws and ethics.jpeg}
 \hfill\break
@@ -590,6 +701,37 @@ Here is a picture of me trying to check for ports on my DC01.
 \includegraphics[width=0.9\textwidth]{fotos/Week 5/Guessing windows nmap.jpeg}
 \break
 \emph{Here it tries to guess Operating System as well.}
+\newpage
+\subsubsection{Secure Network Connections (HTTPS/TLS/SSH)}
+\includegraphics[width=0.9\textwidth]{fotos/Week 5/Secure Network Connections.jpeg}
+\hfill\break
+\hfill\break
+Apparently Stephan said that infra student don't need to do this.
+\hfill\break
+\hfill\break
+
+\newpage
+\subsection{Week 6}
+\subsubsection{Setting up a VPN}
+\includegraphics[width=0.9\textwidth]{fotos/Week 6/Vpn basic level.jpeg}
+\hfill\break
+\includegraphics[width=0.9\textwidth]{fotos/Week 6/Vpn/OpenVPN exporter .jpeg}
+\hfill\break
+\hfill\break
+\includegraphics[width=0.9\textwidth]{fotos/Week 6/Vpn/Setting up servercert.jpeg}
+\hfill\break
+\hfill\break
+\includegraphics[width=0.9\textwidth]{fotos/Week 6/Vpn/Vpn status.jpeg}\
+\hfill\break
+\hfill\break
+\includegraphics[width=0.9\textwidth]{fotos/Week 6/Vpn/Vpn connect succesfull.jpeg}
+\hfill\break
+\hfill\break
+\includegraphics[width=0.6\textwidth]{fotos/Week 6/Vpn/Vpn connect log.jpeg}
+\break
+\emph{It shows that it is connected succesfully}
+\hfill\break
+\hfill\break
 \newpage
 \section{Attachment 1: My Notes}
 \subsection{Workshop hacking related coding basic notes}
@@ -679,7 +821,47 @@ Wensday on 1 march we got a workshop about ....
 \subsection{Secure connection with crypto}
 \includepdf[pages=-]{PDFs/Week 5/Workshop Notes 16 mrt secure connection with crypto.pdf}
 \newpage
+\subsection{Workshop Secure network architecture basic \& firewall types}
+\includepdf[pages=-]{PDFs/Week 6/Workshop Notes secure network architecture basic firewalls.pdf}
+\newpage
+\subsection{Workshop Secure solutions 2/2 Kickoff}
+\includegraphics{PDFs/Week 6/Workshop Notes kickoff.pdf}
+\newpage
+\subsection{Workshop VPN config}
+\includepdf[pages=-]{PDFs/Week 6/Workshop Notes vpn 1.pdf}
+\includepdf[pages=-]{PDFs/Week 6/Workshop Notes vpn 2.pdf}
+\newpage
 \section{Attachment 2: SOAR project Semester 3}
 \label{soarpdf}
 \includepdf[pages=-]{PDFs/Week 4/portfoliosoar.pdf}
+\newpage
+\section{Attachment 3: PVI Proposal}
+\subsection{Introduction}
+In this report, I'll be researching a vulnerability and investigating it for my personal project. This proposal was meant to show the teachers what I'm planning to do for my personal project. Starting with the Problem, Objectives, Scope, Methodology and Conclusion.
+\subsection{Problem}
+In This research, we'll be discussing the vulnerabilities of our FRITZ!Box. Since FRITZ!Box never updates its features to the new standards. At least the FRITZ!Box 5490 doesn't get any new features from 7590 AX. This means that my FRITZ!Box is running with an SMB V1 which is unsafe by today's standards.
+\subsection{Objectives}
+The main objectives of this investigation are:
+\begin{itemize}
+    \item To identify vulnerabilities.
+    \item To determine how much damage it can cause.
+    \item To recommend preventing this vulnerability 
+\end{itemize}
+\subsection{Scope}
+This investigation will be focused on a specific network and system. The investigation will cover the following areas:
+\begin{itemize}
+    \item Network security
+    \item Application security
+    \item System's security
+\end{itemize}
+\subsection{Methodology}
+The investigation will be conducted using a combination of automated tools and manual techniques. The following methodology will be employed:
+\begin{itemize}
+    \item Footprinting: To gather information about our FRITZ!Box.
+    \item Scanning: To scan for open ports or to find any openings for a vulnerability
+    \item Pen testing: This involves testing for any possible penetration to exploit any vulnerabilities.
+    \item Reporting: The document will be created with the report on the pen-testing alongside the research questions and how to prevent it in Dot Framework.
+\end{itemize}
+\subsection{Conclusion}
+In conclusion, this proposal is about how the features need to be updated or deprecated for any further use. With future demonstrations about this Personal Project, I want to show my class and my group what great alternatives are and how to best mitigate this.
 \end{document}
