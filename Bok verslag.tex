@@ -8,6 +8,7 @@
 \usepackage[hidelinks]{hyperref}
 \usepackage{subcaption}
 \usepackage{pdfpages}
+\usepackage{comment}
 \pagestyle{fancyplain}% <- use fancyplain instead fancy
 \fancyhf{}
 \addtolength{\headheight}{15pt}
@@ -38,6 +39,12 @@
        0.3  &  Finished week 3  & 03/03/23 \tabularnewline \hline
         0.3.1  &  Finished week 5  & 21/03/23 \tabularnewline \hline
         0.3.2  &  Finished roughly finished week 4  & 28/03/23 \tabularnewline \hline
+         0.3.3  & Moved notes to different doc  & 14/04/23 \tabularnewline \hline
+         0.3.4  & Started with Week 9 & 19/04/23 \tabularnewline 
+          0.3.5  & Started with Week 10/11 & 10/05/23 \tabularnewline
+           0.4  & brought back notes and made pass cracking & 11/05/23 \tabularnewline
+           0.4.1  & Added the rest of the notes & 13/05/23 \tabularnewline
+           0.4.2  & Minor text changes & 13/05/23 \tabularnewline
         \end{tabular}
     \end{table}
 \newpage
@@ -733,6 +740,300 @@ Apparently Stephan said that infra student don't need to do this.
 \hfill\break
 \hfill\break
 \newpage
+\subsubsection{Network Separation and Segmentation (Firewalls)}
+\includegraphics[width=0.9\textwidth]{fotos/Week 6/Network separation and segmention/Basic level.jpeg}
+\hfill\break
+\hfill\break
+\includegraphics[width=0.9\textwidth]{fotos/Week 5/Semester 4 Week 5 netwerk tekening.jpg}
+\break
+\emph{My old network environment}
+\hfill\break
+\hfill\break
+\includegraphics[width=0.8\textwidth]{fotos/Week 6/Network separation and segmention/Week 6 network segmentation 2.jpg}
+\break
+\emph{Desired Network Design "Proof of concept"}
+\newpage
+\subsection{Week 7}
+\subsubsection{Network Sniffing and Spoofing}
+\includegraphics[width=0.9\textwidth]{fotos/Week 7/Network Sniffing and Spoofing/Basic.jpeg}
+\hfill\break
+\hfill\break
+Since that, I'll be doing this on my vCenter. This is the network design of how I'll sniff the network with Wireshark and look at the traffic.
+
+\hfill\break
+\hfill\break
+\includegraphics[width=0.5\textwidth]{fotos/Week 7/Network Sniffing and Spoofing/Week 7 network sniffing.jpg}
+\break
+\emph{In this drawing you can see that I'll be trying to sniff w10-1 and DC01}
+\newpage
+\subsection{Week 8}
+\subsubsection{IT Basic Monitoring}
+\includegraphics[width=0.8\textwidth]{fotos/Week 8/IT Basic Monitoring/Basiclevel.jpeg}
+\hfill\break
+\hfill\break
+After the presentation, I want to start using Nagios to connect with my Windows Server so I can monitor it.
+\hfill\break
+\hfill\break
+\includegraphics[width=0.8\textwidth]{fotos/Week 8/IT Basic Monitoring/Fotos/Nagios deploy.png}
+\break
+\emph{After deploying NAGIOS XI into vCenter}
+\hfill\break
+\hfill\break
+\includegraphics[width=0.8\textwidth]{fotos/Week 8/IT Basic Monitoring/Fotos/NAGIOs setup.png}
+\break
+\emph{In this picture I'm setting up a Nagios XI web}
+\hfill\break
+\hfill\break
+\includegraphics[width=0.8\textwidth]{fotos/Week 8/IT Basic Monitoring/Fotos/W10 agent attempt install.png}
+\break
+\emph{First I'm going to see if this going to work on my Windows 10}
+\hfill\break
+\hfill\break
+\includegraphics[width=0.8\textwidth]{fotos/Week 8/IT Basic Monitoring/Fotos/W10 down.png}
+\break
+\emph{After installation we can see that Nagios XI cannot connect to my W10}
+\newpage
+\subsubsection{IT Security Monitoring}
+\includegraphics[width=0.8\textwidth]{fotos/Week 8/IT Security Monitoring/Basiclevel.jpeg}
+\hfill\break
+\hfill\break
+In this exercise, I'll be going to use Zeek with the help of "Templ\_Ubuntu\_Server\_20.04". After deploying I'm going to follow the guide from Canvas (Exercise Zeek Installation on Ubuntu Server 20.pdf)
+\hfill\break
+\hfill\break
+\includegraphics[width=0.8\textwidth]{fotos/Week 8/IT Security Monitoring/Error libc.png}
+\break
+\emph{After trying to install I get 2 errors which I cannot fix}
+\newpage
+\subsubsection{Network Intrusion Detection and Prevention (NIDS/IPS)}
+\includegraphics[width=0.8\textwidth]{fotos/Week 8/Network Intrusion Detection and Prevention/Basic.jpeg}
+\hfill\break
+\hfill\break
+In this challenge I'll establish Suricata and connect it to PFSense.
+\hfill\break
+\hfill\break
+\newpage
+\section{Security Concepts (week 9-11)}
+\subsection{Week 9}
+\subsubsection{Identity and Access Management}
+\textbf{The exercise}
+\hfill\break
+\hfill\break
+\emph{Design a role structure and policies for a small virtual company. Which part of CIA is mainly relevant?}
+\hfill\break
+\hfill\break
+I would choose:
+\begin{enumerate}
+    \item confidentiality
+    \item Integrity
+    \item Availability
+\end{enumerate}
+
+Since It's a small company this means we are going to keep in mind:
+\begin{enumerate}
+    \item Keep low cost with license.
+    \item Security must be up to date.
+    \item Must be easily maintainable. 
+    \item Must be stable.
+\end{enumerate}
+\textbf{Policy}
+\hfill\break
+After researching and asking questions in RB01 I've discovered that ISO/IEC 27001 - ISO/IEC 27005 is compatible. This is handy if we are going to deploy Windows Server AD Policy/Azure AD.
+
+My choice is then: 
+ISO/IEC 27001:2022
+\hfill\break
+\hfill\break
+\textbf{Roles}
+\hfill\break
+If we stick with AD OU's and groups. Then I'll like to make this 
+\hfill\break
+\hfill\break
+\includegraphics[width=0.8\textwidth]{fotos/Week 9/OU hierarchy.jpg}
+
+\subsubsection{Password Cracking}
+\includegraphics[width=0.9\textwidth]{fotos/Week 9/Password cracking/IMG_0766.jpeg}
+\hfill\break
+\hfill\break
+In order to crack the password you need a password list which you can download somewhere in Github. Dean has recommended me to use RockYou as a password list so I took his advice and tested it.
+\hfill\break
+\includegraphics[width=0.8\textwidth]{fotos/Week 9/Password cracking/Rockyou.png}
+\break
+\emph{Here you can see the downloaded list}
+\hfill\break
+\hfill\break
+\includegraphics[width=0.8\textwidth]{fotos/Week 9/Password cracking/Code.jpeg}
+\break
+\emph{Trying to crack the password with this command}
+\hfill\break
+\hfill\break
+After waiting I've figured it out that I have made a mistake. It should have finished in 2 - 5 min but I forgot to use Burp and take the cookie session from the proxy and paste it on the command line. Apparently, RockYou password list is bad since it is old and never to be updated. Kali Linux has a built in list in the directory. And the world list gets updated by sudo apt-get upgrade (first update then upgrade).
+\hfill\break
+\hfill\break
+\textbf{What is password cracking?}
+\hfill\break
+Unauthorized users trying to get access to a website or an account where they are not supposed to go and they trying to access your logins with sets of phrases or words in order to get access.
+\hfill\break
+\hfill\break
+\textbf{Give Examples of famous password cracking attacks (nice source about earlier attacks/leaks: https://haveibeenpwned.com/, Links to an external site. some keywords to think of: are attack types (e.g. brute-force, dictionary, hybrid), rainbow table, salt, hashing, estimating cracking time.}
+\hfill\break
+I don't need to look at this website since last year a famous password manager site got hacked it's called LastPass and the funny thing is that my master password was 8 characters long. According to some passwords site my password would have been cracked in 8 hours. I now to Keepas which can only run on locally and plus my master password is now really long so if I forget it then no one can open my safe.
+\hfill\break
+\hfill\break
+\textbf{How to make password cracking harder for an attacker?}
+\hfill\break
+On the user side
+\hfill\break
+I would recommend using a password manager which has a built-in password manager that can generate a password with at least 16 characters with letters, numbers, capital and special letters.
+\hfill\break
+\hfill\break
+On the server side
+\hfill\break
+A reverse proxy can do wonders for login security, Also it can help that adding Multi-factor authentication adds security on top of it.
+\newpage
+\subsection{Week 10/11}
+\subsubsection{Security Incident Management + IT Business Continuity + Mitigation}
+\textbf{Security Incident Management basic:}
+\begin{itemize}
+\item Read the information above. Study the steps to take in a security incident analysis.
+\item Then do the following exercise and explain in your portfolio how you did it, and what your conclusions are for the process of security incident management in companies. Exercise: Think about a security incident that could happen in your 'basic knowledge company'. Perform a triage and work out a complete response as it should be done in your company. Try to include realistic roles/employees from your company in the process where needed. Do assumptions on what happened and on Indicators of Compromise. The goal is to show that you have learned the process of doing a security incident analysis.
+\end{itemize}
+\textbf{Business Continuity \& Risk Mitigation basic:}
+\begin{itemize}
+    \item Take your top 5 risks from the Risk analysis assignment and Describe them in a Business Continuity- or Disaster Recovery Plan. Look up terms such as Backup Strategy, Redundancy, RTO \& RPO to get started. Use the sources to get inspired. (Max 2 pages).
+    \item Finally you can advise company X on which mitigating measures should be taken to reduce then likelihood of the risks happening. Substantiate your advise by referring to the research already done.
+\end{itemize}
+\textbf{Backup Strategy}
+\hfill\break
+\hfill\break
+\includegraphics[width=0.8\textwidth]{fotos/Week 1011/Risk mitigation/Disaster.jpeg}
+\hfill\break
+\textbf{Recovery Point Objective (RPO)}
+\hfill\break
+Recovery Point Objective. It is how much data loss you can tolerate 
+\hfill\break
+\textbf{Recovery Time Objective (RTO)}
+\hfill\break
+RTO is meant to calculate how long it takes to recover from a disaster. 
+\hfill\break
+\hfill\break
+I'm using IBM Disaster Recovery Plan (\url{https://www.ibm.com/docs/en/i/7.1?topic=system-example-disaster-recovery-plan})
+\begin{enumerate}
+\item Major goals of a disaster recovery plan\
+\hfill\break
+\textit{Here are the major goals of a disaster recovery plan.}
+\hfill\break
+I would have every file to have a shadow copy plus have incremental updates to have as a backup on every client PC/Laptop. On servers, I would like to see some storage with at least raid 10.
+
+\item Personnel
+\hfill\break
+\textit{You can use the tables in this topic to record your data processing personnel. You can include a copy of the organization chart with your plan.}
+Using roaming profiles so if the devices break we can restore the last checkpoint to their new thin clients.
+
+\item Application profile
+\hfill\break
+\textit{You can use the Display Software Resources (DSPSFWRSC) command to complete the table in this topic.}
+
+\item Inventory profile
+\hfill\break
+\textit{You can use the Work with Hardware Products (WRKHDWPRD) command to complete the table in this topic.}
+
+\item Information services backup procedures
+\hfill\break
+\textit{Use these procedures for information services back up.}
+\hfill\break
+Every month a full backup
+\hfill\break
+On Tuesday \& Saturday night incremental backups 
+\hfill\break
+Shadow copy on every disk
+
+\item Disaster recovery procedures
+\hfill\break
+\textit{For any disaster recovery plan, these three elements should be addressed.}
+Look how much damage has been done, Estimate the cost and time for recovery and what the cause may be in order to prevent it next time.
+\item Recovery plan for mobile site
+\hfill\break
+\textit{This topic provides information about how to plan your recovery task at a mobile site.}
+\hfill\break
+On mobile sites can be difficult because of the surroundings. But the best method would be to have a backup on anything hardware and software wise.
+
+\item Recovery plan for hot site
+\hfill\break
+\textit{An alternate hot site plan should provide for an alternative (backup) site. The alternate site has a backup system for temporary use while the home site is being reestablished.}
+\hfill\break
+Have a backup server and an emergency server deployment company which comes and deploys a server temporarily. It costs a lot but it is cheaper than being down for long. 
+
+\item Restoring the entire system
+\hfill\break
+\textit{You can learn how to restore the entire system.}
+\hfill\break
+After the disaster, we can slowly recover the data and start going back to work.
+
+\item Rebuilding process
+\hfill\break
+\textit{The management team must assess the damage and begin the reconstruction of a new data centre.}
+\hfill\break
+After recovering from all of this it is time to reevaluate the disaster from a different perspective
+
+\item Testing the disaster recovery plan
+\hfill\break
+\textit{In successful contingency planning, it is important to test and evaluate the plan regularly.}
+\hfill\break
+In order to prevent this from happing anytime soon we must test the disaster recovery plan in order to be prepared for the next disaster where may be. Now we can minimize the damage and reduce down time.
+
+\item Disaster site rebuilding
+\hfill\break
+\textit{Use this information to do disaster site rebuilding.}
+\hfill\break
+After the disaster, it is important to see how we can rebuild better and faster once the disaster happened 
+\item Record of plan changes
+\hfill\break
+\textit{Keep your plan current, and keep records of changes to your configuration, your applications, and your backup schedules and procedures.}
+\hfill\break
+Keep updating the plan and schedules since everything gets upgrades which means we need to keep an ui out for more faulty situations.
+\newpage
+\end{enumerate}
+\subsubsection{IT System Hardening + Common Vulnerabilities and Exposures (CVE's)}
+\textbf{IT System Hardening basic:}
+\begin{itemize}
+    \item Is your laptop/PC hardened? Write down in your portfolio how you have hardened your laptop/PC and how your laptop's system hardening can be improved? (use for example the checklists in the system hardening guides below at Resources).
+    Do one of the following exercises:
+    \item Install a Active Directory Server in your demo network and define a domain, a couple of users (5) and a couple of groups (2) for your company X. Assign the users to one of the groups. Set up a password policy. Describe your implementation process together with screen shots in your portfolio. Bonus: harden the Windows server. \textbf{OR:}
+    \item Configure two-factor authentication using the google authenticator. See the tutorial at the LMC
+\end{itemize}
+\hfill\break
+\hfill\break
+
+Yes, I do believe that My iPad Pro is secured.... enough, but not of the security it's just that this thing is so lockdown and stupid that It has no instructions to run the script from mail or anything which keeps me safe because Dean is constantly trying to track my iPad and break in... After I gas lighted him that he cannot do it and still to this day, he did not access my iPad Pro. I had a 10-year-old computer(that broke) that ran the latest Linux with the latest kernel but I don't know if it was secured enough since I left it default.
+\hfill\break
+\hfill\break
+I'll demo the Active Directory.
+\hfill\break
+\includegraphics[width=0.8\textwidth]{fotos/Week 1011/IT hardening/AD/Ou.jpeg}
+\hfill\break
+\emph{My OU structure}
+%\includegraphics[width=0.8\textwidth]{}
+\hfill\break
+\hfill\break
+Here is an example for my OU Stagiaires
+\includegraphics[width=0.8\textwidth]{fotos/Week 1011/IT hardening/AD/Stagiaire 1.jpeg}
+\hfill\break
+\hfill\break
+\includegraphics[width=0.8\textwidth]{fotos/Week 1011/IT hardening/AD/Stagaires 2.png}
+\newpage
+\textbf{Common Vulnerabilities and Exposures (CVE's) basic}
+\begin{itemize}
+    \item Asses a vulnerability that is relevant for your reference company or organisation (take a vulnerability that has already been patched), find the CVSS rating and try to fill in the CVSS calculator Links to an external site.. find out which metrics are important to your reference company. Substantiate your choices.
+\end{itemize}
+\hfill\break
+\includegraphics[width=0.8\textwidth]{fotos/Week 1011/CVE/Basescore.jpeg}
+\break
+\emph{Base score}
+\hfill\break
+\hfill\break
+\includegraphics[width=0.8\textwidth]{fotos/Week 1011/CVE/Temp score.jpeg}
+\newpage
+
 \section{Attachment 1: My Notes}
 \subsection{Workshop hacking related coding basic notes}
 \label{workshop:week1}
@@ -764,7 +1065,7 @@ Marco has us some locks to play around with. I started with level 2. It wasn't t
 \begin{figure}[!ht]
     \centering
     \begin{subfigure}{.5\textwidth}
-        \centering
+        \centering
         \includegraphics[width=.8\linewidth]{PDFs/Week 2/Lock pick lvl2.jpeg}
         \caption{Trying to unlock lvl 2 lock}
     \end{subfigure}%
@@ -830,6 +1131,9 @@ Wensday on 1 march we got a workshop about ....
 \subsection{Workshop VPN config}
 \includepdf[pages=-]{PDFs/Week 6/Workshop Notes vpn 1.pdf}
 \includepdf[pages=-]{PDFs/Week 6/Workshop Notes vpn 2.pdf}
+\newpage
+\subsection{Rest of the workshop notes}
+\includepdf[pages=-]{PDFs/Rest of the workshop notes.pdf}
 \newpage
 \section{Attachment 2: SOAR project Semester 3}
 \label{soarpdf}

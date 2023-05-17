@@ -1,0 +1,188 @@
+\documentclass[12pt, letterpaper]{article}
+\usepackage{times}
+\usepackage{graphicx}
+\usepackage{import}
+\usepackage{fancyhdr}
+\usepackage{wrapfig}
+\usepackage[utf8]{inputenc}
+\usepackage[hidelinks]{hyperref}
+\usepackage{subcaption}
+\usepackage{pdfpages}
+\usepackage{enumitem}
+\usepackage{titling}
+\pagestyle{fancyplain}% <- use fancyplain instead fancy
+\fancyhf{}
+\addtolength{\headheight}{15pt}
+\fancyhead[L]{Cyber Security: PVI - Konstantinos Poumpouridis}% <- added
+\fancyhead[R]{488394}
+\fancyfoot[C]{\thepage}
+%\renewcommand\headrulewidth{0pt}% default ist .4pt
+\renewcommand{\plainheadrulewidth}{.4pt}% default is 0pt
+\title{Personal Project: Vulnerability Investigation}
+\author{Konstantinos Poumpouridis}
+\date{11/05/2023}
+\pagenumbering{arabic}
+% set up \maketitle to accept a new item
+\predate{\begin{center}\placetitlepicture\large}
+\postdate{\par\end{center}}
+
+% commands for including the picture
+\newcommand{\titlepicture}[2][]{%
+  \renewcommand\placetitlepicture{%
+    \includegraphics[#1]{#2}\par\medskip
+  }%
+}
+\newcommand{\placetitlepicture}{} % initialization
+\begin{document}
+\titlepicture[width=0.6\textwidth]{fotos/PSP/Hackintosh title.jpeg}
+\maketitle
+\thispagestyle{empty}
+\newpage
+\section{Changelog}
+    \begin{table}[htbp]
+        \begin{tabular}{|l|l|l|}
+            \hline
+            Version & Changes         & Date   \tabularnewline \hline
+            0.1     & Initial version & 11/05/23 \tabularnewline \hline
+\tabularnewline \hline
+        \end{tabular}
+    \end{table}
+\newpage
+\tableofcontents
+\newpage
+
+\section{Introduction}
+People wanted to have MacOS without buying Mac devices. So once Apple left IBM PowerPC chips the flood of hackers went In and try to port it to other non-Apple devices to see run it as daily drivers. That's how Hackintosh was born.
+
+\section{Background}
+Since 2015 when Apple switched from PowerPC to Intel-based Macs which open the possibilities for porting MacOS to non-based Macs. It started with Mac OS X Tiger (10.4).
+
+\subsection{History}
+ 
+
+\subsubsection{Mac OS X Tiger (10.4)}
+On June 6 2015 Apple announced that it would support X86 architecture with Intel. So it was the first version that supported x86 execution. This was also the first time that they support EFI which most of the other brands still ran on old legacy BIOS. The hacker's managed to make it run on SSE 3 CPU's which means a Pentium 4 (SSE 2) has limited instructions but it was a promising start.
+\subsubsection{Mac OS X Leopard (10.5)}
+
+
+\subsubsection{Mac OS X Snow Leopard (10.6)}
+
+\subsubsection{Mac OS X Lion (10.7)}
+
+\subsubsection{Mac OS X Mountain Lion (10.8)}
+
+\subsubsection{OS X Mavericks (10.9}
+
+\subsubsection{OS X Yosemite (10.10)}
+
+\subsubsection{OS X El Capitan (10.11)}
+
+\subsubsection{macOS Sierra (10.12)}
+This version has hackers-created AMD Processors support
+
+\subsubsection{macOS High Sierra (10.13}
+
+\subsubsection{macOS Mojave (10.14)}
+
+\subsubsection{macOS Catalina (10.15)}
+
+\subsubsection{macOS Big Sur (11)}
+
+\subsubsection{macOS Monterey (12)}
+
+\subsubsection{macOS Ventura (13)}
+
+\newpage
+
+\section{Objectives}
+The main objectives of this investigation are:
+\begin{itemize}
+    \item To identify vulnerabilities.
+    \item To determine how much damage it can cause.
+    \item To recommend preventing this vulnerability 
+\end{itemize}
+
+\newpage
+\section{Methodology}
+The investigation was conducted using a combination of manual and automated techniques. The following steps were taken:
+
+\begin{itemize}
+\item Conducted a literature review to understand the historical context of SMBv1 vulnerabilities.
+\item Analyzed the Windows operating system to identify potential vulnerabilities related to SMBv1.
+\item Used vulnerability scanning tools to identify and assess the severity of any vulnerabilities discovered.
+\item Conducted penetration testing to simulate a real-world attack on the SMBv1 protocol.
+\item Analyzed the results of the vulnerability testing to identify the most critical vulnerabilities that must be addressed.
+\end{itemize}
+\subsubsection{Native Hackintosh}
+With a native Hackintosh, you need to follow the guide from Clover or OpenCore. After researching on Reddit, Olarila forums and tonymacx86. So the method is to use OpenCore Efi and It was recommended to use Intel-based to be most compatible.
+
+\subsubsection{Virtualization}
+The best method and the possible future solution. Since that, you can fake the components with any server components and you can simulate everything with any issues.
+\newpage
+\section{Legality}
+Since the EULA states that it is not allowed 
+\section{Materials}
+To create a test environment, I need to have the materials to run this test if it is true.
+\begin{enumerate}[label=(\roman*)]
+    \item FRITZ!Box 5490
+    \item MSI GF63 8rc
+    \item iPad Pro M1
+    \item USB port
+\end{enumerate}
+\subsection{Tools}
+\begin{enumerate}
+    \item smbmap
+    \item nmap
+    \item d4t4s3c/SMBploit
+    \item Fritzbox diagnostic
+    \item Virtualbox/NAT
+\end{enumerate}
+
+\section{Results}
+
+
+\subsection{CVE's}
+
+
+\subsection{The testing}
+
+
+
+\subsubsection{What have we found out}
+
+
+
+\section{Outcomes}
+Here I'll outline the outcomes of my investigation. What I'm hoping to achieve is to identify the exploit and suggest a solution to my classmates.
+
+\subsection{Expected Outcomes}
+
+
+\subsection{Actual Outcomes}
+
+
+\newpage
+\section{Planning}
+In this section I'm going to plan my estimated times:
+\hfill\break
+    \begin{table}[htbp]
+        \begin{tabular}{|l|l|l|}
+            \hline
+            Estimate Hours & Activity    & Personnel    \tabularnewline \hline
+            5 - 10 hours   & Researching about the subject & Kosta \tabularnewline \hline
+            2 - 5 hours  & Document my investigation & Kosta \tabularnewline 
+            \hline
+            10 - 15 hours & Run it in my test environment & Kosta \tabularnewline \hline
+            2 - 5 hours & Create Presentation & Kosta \tabularnewline \hline
+        \end{tabular}
+    \end{table}
+
+\section{Conclusion}
+
+
+
+
+\subsection{About the Research Questions}
+
+
+\end{document}
